@@ -2,11 +2,10 @@ package com.dick.node;
 
 
 import java.util.ArrayDeque;
-import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinaryTreeTraversal {
     /**
      *@Author: Cheng Leiyu
      *@Description: 二叉树的结点应为逆序建立，按照java的初始化机制，会先加载上面的结点，编译器会报错
@@ -88,7 +87,7 @@ public class BinaryTree {
         if(node == null) {
             return;
         }
-        Stack<Node> stack = new Stack();
+        Stack<Node> stack = new Stack <> ();
         stack.push(node);
         while(!stack.isEmpty()) {
             Node stackNode = stack.pop();
@@ -102,6 +101,12 @@ public class BinaryTree {
         }
     }
 
+    /**
+     *@Author: Cheng Leiyu
+     *@Description: 二叉树广度优先遍历
+     *@Date:2018-11-7_14:32
+     *@Modify By
+     */
     public void LevelOrderTraversal(Node node){
         if (node == null) {
             return;
@@ -110,6 +115,7 @@ public class BinaryTree {
         queue.add(node);
         while (!queue.isEmpty()) {
            Node queueNode = queue.poll();
+            System.out.println ( );
            System.out.println(queueNode.getData());
            if (queueNode.getLeftNode() != null) {
                queue.add(queueNode.getLeftNode());
@@ -119,15 +125,15 @@ public class BinaryTree {
            }
         }
     }
+
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
-        //binaryTree.init();
-        //binaryTree.theFirstTraversal(BinaryTree.init());
-        //binaryTree.theInOrderTraversal(BinaryTree.init());
-
-        //binaryTree.thePostTraversal(BinaryTree.init());
-
-        //binaryTree.depthOrderTraversal(BinaryTree.init());
-        binaryTree.LevelOrderTraversal(BinaryTree.init());
+        BinaryTreeTraversal binaryTreeTraversal = new BinaryTreeTraversal();
+        System.out.println("hello");
+        //binaryTreeTraversal.init();
+        //binaryTreeTraversal.theFirstTraversal(BinaryTreeTraversal.init());
+        //binaryTreeTraversal.theInOrderTraversal(BinaryTreeTraversal.init());
+        //binaryTreeTraversal.thePostTraversal(BinaryTreeTraversal.init());
+        //binaryTreeTraversal.depthOrderTraversal(BinaryTreeTraversal.init());
+        //binaryTreeTraversal.LevelOrderTraversal(BinaryTreeTraversal.init());
     }
 }
